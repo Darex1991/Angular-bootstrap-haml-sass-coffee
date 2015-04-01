@@ -12,26 +12,42 @@ Yeoman, Grunt, Bower, Angular, Bootstrap, Haml, Sass, Coffee
 
 ## Installation
 
-First make sure brew is current:
-      
-    brew update
-
-And same for nodejs
-    
-    brew upgrade node
-    
 Clone project:
 
     git clone git@github.com:Darex1991/Converter.git
     cd Converter
-    
+
+Make sure brew is current:
+
+    brew update
+
+And same for nodejs
+
+    brew upgrade node
+
 Install dependencies:
-    
+
+    bundle
     npm install
     bower install    
     
-Read to craete new:
-    
+## Test (Karma)
+
+    grunt test
+
+## Run
+
+Launch the server:
+
+    grunt server
+
+Open web on localhost:9000
+
+________________________
+________________________
+
+### Another commands (if necessary):
+
 Install yeoman:
 
     npm install -g yo grunt-cli bower
@@ -52,16 +68,6 @@ Try run tests and server. If it's still no working paste this in terminal:
     npm install grunt-contrib-sass --save-dev
     npm install grunt-contrib-clean --save-dev
     npm install grunt-contrib-haml --save-dev
-
-## Test (Karma)
-
-    grunt test
-
-## Run
-
-Launch the server:
-
-    grunt serve
 
 ________________________
 ________________________
