@@ -25,6 +25,13 @@ Clone project:
     git clone git@github.com:Darex1991/Converter.git
     cd Converter
     
+Install dependencies:
+    
+    npm install
+    bower install    
+    
+Read to craete new:
+    
 Install yeoman:
 
     npm install -g yo grunt-cli bower
@@ -34,11 +41,6 @@ Install gems(if you want, you can use rvm):
     gem install haml
     gem install sass
     gem install compass
-
-Install dependencies:
-    
-    npm install
-    bower install
     
 Try run tests and server. If it's still no working paste this in terminal:
     
