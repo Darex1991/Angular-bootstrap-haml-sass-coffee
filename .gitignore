@@ -59,3 +59,5 @@ crashlytics-build.properties
 
 .tmp/
 .sass-cache/
+
+app/components
