@@ -7,7 +7,17 @@ basePath = '';
 files = [
   ANGULAR_SCENARIO,
   ANGULAR_SCENARIO_ADAPTER,
-  'test/e2e/**/*.js'
+  'app/components/underscore/underscore.js',
+  'app/components/angular/angular.js',
+  'app/components/angular-mocks/angular-mocks.js',
+  'app/components/angular-cookies/angular-cookies.js',
+  'app/components/angular-resource/angular-resource.js',
+  'app/components/angular-sanitize/angular-sanitize.js',
+  'app/components/angular-scenario/angular-scenario.js',
+
+  '.tmp/test/e2e_test/*.js',
+  '.tmp/test/e2e_test/**/*.js'
+
 ];
 
 // list of files to exclude
@@ -31,7 +41,7 @@ colors = true;
 logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = false;
+autoWatch = true;
 
 // Start these browsers, currently available:
 // - Chrome
@@ -49,3 +59,9 @@ captureTimeout = 5000;
 // Continuous Integration mode
 // if true, it capture browsers, run tests and exit
 singleRun = false;
+
+urlRoot = '/__karma/';
+
+proxies = {
+  '/' : 'http://localhost:9000/'
+};

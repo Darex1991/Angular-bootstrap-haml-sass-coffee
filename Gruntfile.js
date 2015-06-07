@@ -24,15 +24,15 @@ module.exports = function (grunt) {
     watch: {
       haml: {
         files: ['<%= yeoman.app %>/views/{,*/}*.haml'],
-        tasks: ['haml:dist']
+        tasks: ['haml']
       },
       coffee: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-        tasks: ['coffee:dist']
+        tasks: ['coffee']
       },
       coffeeTest: {
-        files: ['test/spec/{,*/}*.coffee'],
-        tasks: ['coffee:test']
+        files: ['test/spec/{,*/}*.coffee', 'test/e2e_test/{,*/}*.coffee', ],
+        tasks: ['coffee']
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -45,6 +45,8 @@ module.exports = function (grunt) {
           '{.tmp,<%= yeoman.app %>}/views/{,*/}*.html',
           '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+          '.temp/test/spec/{,*/}*.js',
+          '.temp/test/e2e_test/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
         tasks: ['livereload']
@@ -62,7 +64,8 @@ module.exports = function (grunt) {
             return [
               lrSnippet,
               mountFolder(connect, '.tmp'),
-              mountFolder(connect, yeomanConfig.app)
+              mountFolder(connect, yeomanConfig.app),
+              mountFolder(connect, 'test')
             ];
           }
         }
@@ -110,7 +113,11 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'karma.conf.js',
-        singleRun: true
+        singleRun: false
+      },
+      e2e: {
+        configFile: 'karma-e2e.conf.js',
+        singleRun: false
       }
     },
     coffee: {
@@ -131,7 +138,14 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'test/spec',
             src: '{,*/}*.coffee',
-            dest: '.tmp/spec',
+            dest: '.tmp/test/spec',
+            ext: '.js'
+          },
+          {
+            expand: true,
+            cwd: 'test/e2e_test',
+            src: '{,*/}*.coffee',
+            dest: '.tmp/test/e2e_test',
             ext: '.js'
           }
         ]
@@ -301,7 +315,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', [
     'clean:server',
-    'coffee:dist',
+    'coffee',
     'haml:dist',
     'compass:server',
     'livereload-start',
@@ -312,11 +326,14 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'compass:dist',
     'coffee',
     'haml',
     'compass',
+    'livereload-start',
     'connect:test',
-    'karma'
+    'karma',
+    'watch'
   ]);
 
   grunt.registerTask('build', [

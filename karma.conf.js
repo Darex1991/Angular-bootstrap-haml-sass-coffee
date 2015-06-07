@@ -7,13 +7,17 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
+  'app/components/underscore/underscore.js',
   'app/components/angular/angular.js',
   'app/components/angular-mocks/angular-mocks.js',
-  'app/scripts/*.js',
-  'app/scripts/**/*.js',
+  'app/components/angular-cookies/angular-cookies.js',
+  'app/components/angular-resource/angular-resource.js',
+  'app/components/angular-sanitize/angular-sanitize.js',
+
+  '.tmp/scripts/*.js',
   '.tmp/scripts/**/*.js',
-  'test/mock/**/*.js',
-  'test/spec/**/*.js'
+  '.tmp/test/spec/*.js',
+  '.tmp/test/spec/controllers/*.js'
 ];
 
 // list of files to exclude
@@ -37,7 +41,7 @@ colors = true;
 logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = false;
+autoWatch = true;
 
 // Start these browsers, currently available:
 // - Chrome

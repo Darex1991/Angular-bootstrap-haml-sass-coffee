@@ -12,10 +12,7 @@ Yeoman, Grunt, Bower, Angular, Bootstrap, Haml, Sass, Coffee
 
 ## Installation
 
-Clone project:
-
-    git clone git@github.com:Darex1991/Converter.git
-    cd Converter
+Clone project
 
 Make sure brew is current:
 
@@ -29,8 +26,8 @@ Install dependencies:
 
     bundle
     npm install
-    bower install    
-    
+    bower install
+
 ## Test (Karma)
 
     grunt test
@@ -43,6 +40,22 @@ Launch the server:
 
 Open web on localhost:9000
 
+## Testing
+test all
+
+    grunt karma
+
+unit testing:
+
+    grunt karma:unit
+
+e2e testing:
+
+    grunt karma:e2e
+
+## Short testing
+
+    grunt test
 ________________________
 ________________________
 
@@ -57,9 +70,9 @@ Install gems(if you want, you can use rvm):
     gem install haml
     gem install sass
     gem install compass
-    
+
 Try run tests and server. If it's still no working paste this in terminal:
-    
+
     npm install -g grunt-cli
     npm install grunt-contrib-connect --save-dev
     npm install grunt-contrib-watch --save-dev
@@ -72,20 +85,20 @@ Try run tests and server. If it's still no working paste this in terminal:
 ________________________
 ________________________
 ##When you have problems##
-1. *Don't have Bower? Paste in terminal:* 
+1. *Don't have Bower? Paste in terminal:*
 
-  ```npm config set prefix /usr/local``` 
-  
+  ```npm config set prefix /usr/local```
+
   ```npm install -g bower```
 2. *No find Grunt? Paste:*
-  
+
   ```npm install -g grunt-cli```
 
-3. *No find compass? Install ruby, sass and compass (if you want, you can use rvm). 
+3. *No find compass? Install ruby, sass and compass (if you want, you can use rvm).
 [Read about this problem.](http://www.acnenomor.com/410571p1/grunt-task-compass-fails-could-not-find-rubygem-compass-%3E-0)*
 
   ```gem install sass```
-  
+
   ```gem install compass```
 4. *No find haml files:*
 
