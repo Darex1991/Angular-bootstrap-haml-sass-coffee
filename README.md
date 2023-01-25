@@ -1,7 +1,7 @@
 Angular-bootstrap-haml-sass-coffee
 ==================================
 
-Yeoman, Grunt, Bower, Angular, Bootstrap, Haml, Sass, Coffee
+App ready for use with connected in the same time [AngularJS](https://angularjs.org/), [Bootstrap 3.3](https://getbootstrap.com/docs/3.3/), [Haml](https://haml.info/), [Sass](https://sass-lang.com/), [Coffeescript](https://coffeescript.org/), and with tests in [Karma](https://karma-runner.github.io/latest/index.html)
 
 ##Assumptions##
 
